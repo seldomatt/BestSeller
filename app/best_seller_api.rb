@@ -1,7 +1,8 @@
 class BestSellerApi
 
   def self.root_url
-    "http://api.nytimes.com/svc/books/v2/lists/best-sellers/history.json"
+    ENV['HOST']
+    #"http://api.nytimes.com/svc/books/v2/lists/best-sellers/history.json"
   end
 
   def self.search(query, scope, &block)
@@ -19,7 +20,7 @@ class BestSellerApi
     query = query.downcase if scope == "Author" || scope == "Title"
     {
       scope.downcase => query,
-      "api-key" => "36c07f2c2a198d74d3d5e2f8e4cbc42b:12:67895334"
+      "api-key" => ENV['KEY']
     }
   end
 
