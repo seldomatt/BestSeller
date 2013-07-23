@@ -25,16 +25,14 @@ class SearchController < UIViewController
     hud.labelText = "Searching..."
     search_scope = MySearchBar::SCOPES[searchBar.selectedScopeButtonIndex]
     search_text = searchBar.text
-    5.seconds.later do
-      BestSellerApi.search(search_text, search_scope) do |data, error|
-        if error
-          App.alert("Server Error")
-        else
-          results_controller = SearchResultsController.alloc.initWithResults(data["results"])
-          navigationController.pushViewController(results_controller, animated: true)
-        end
-        MBProgressHUD.hideHUDForView(view, animated: true)
+    BestSellerApi.search(search_text, search_scope) do |data, error|
+      if error
+        App.alert("Server Error")
+      else
+        results_controller = SearchResultsController.alloc.initWithResults(data["results"])
+        navigationController.pushViewController(results_controller, animated: true)
       end
+      MBProgressHUD.hideHUDForView(view, animated: true)
     end
   end
 
