@@ -30,6 +30,7 @@ GEM
     motion-config-vars (0.1.0)
       motion-yaml (>= 1.0)
       rake-hooks (~> 1.2.3)
+    motion-testflight (1.5)
     motion-yaml (1.0)
     multi_json (1.7.7)
     nap (0.5.1)
@@ -55,6 +56,7 @@ DEPENDENCIES
   cocoapods
   motion-cocoapods
   motion-config-vars
+  motion-testflight (= 1.5)
   sugarcube
   sweettea
   teacup

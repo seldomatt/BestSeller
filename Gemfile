@@ -7,3 +7,4 @@ gem "bubble-wrap", "~> 1.3.0"
 gem 'cocoapods'
 gem 'motion-cocoapods'
 gem 'motion-config-vars'
+gem 'motion-testflight', '1.5'
